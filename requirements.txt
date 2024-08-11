@@ -1,0 +1,5 @@
+pandas-gbq
+google-auth
+requests
+python-dotenv
+pandas
