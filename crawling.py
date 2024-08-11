@@ -1,3 +1,35 @@
+"""
+This script extracts and processes music data from Spotify using the Spotify Web API.
+
+The script performs the following tasks:
+1. Initialization:
+   - Loads environment variables for Spotify API credentials.
+   - Sets up logging for tracking the script's execution.
+   - Initializes instances of `SpotifyDataManager` and `SpotifyDataFetcher`.
+
+2. Data Extraction and Processing:
+   - Retrieves album IDs for a specified list of artists.
+   - Fetches and processes album data, including cleaning and deduplication.
+   - Extracts track IDs and fetches related audio features and track data.
+   - Retrieves and processes artist data.
+
+3. Data Storage:
+   - Saves the processed data to CSV files in a specified output directory.
+
+Dependencies:
+- `logging` for logging script activities.
+- `os` for environment variable management and file operations.
+- `pandas` for data manipulation and storage.
+- `dotenv` for loading environment variables from a `.env` file.
+- `core.spotify_data_manager` and `core.spotify_data_fetcher` for interacting with the Spotify API.
+
+Configuration:
+- The script requires Spotify API credentials (`client_id` and `client_secret`) which should be defined in a `.env` file.
+- The list of artists to analyze is specified in the `artist_list` variable.
+
+Usage:
+- Run the script to initialize the data extraction process, fetch and process Spotify data, and save the results to CSV files.
+"""
 import logging
 import os
 import pandas as pd
