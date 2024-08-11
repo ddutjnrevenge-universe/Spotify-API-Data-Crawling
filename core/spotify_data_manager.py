@@ -2,14 +2,14 @@
 SpotifyDataManager Class
 -------------------------
 Purpose:
-    To offer a streamlined and efficient way to interact with the Spotify Web API for accessing extensive music-related data.
+    Facilitates streamlined access to Spotify's Web API, providing a reliable method for retrieving and managing a wide range of music-related data.
 Functionality:
-    - Retrieves access tokens using client credentials for authenticated API requests.
-    - Gathers data about artists, albums, and tracks from Spotify.
-    - Manages pagination and data accumulation from Spotify’s API responses.
+    - Obtains access tokens using client credentials for authenticated API requests.
+    - Retrieves detailed information about artists, albums, and tracks from Spotify.
+    - Handles pagination and data accumulation from Spotify's API responses.
 Use Cases:
-    Ideal for building music recommendation systems, conducting music industry analysis, or creating applications that require detailed insights into Spotify's music catalog. 
-    It can be used in data science projects, marketing analysis, or by music enthusiasts for creating personalized music experiences.
+    - Potential for developing music recommendation systems, performing music industry analysis, or creating applications that require in-depth insights into Spotify's music catalog. 
+    - Data science projects, marketing analysis, or personalized music experience applications..
 """
 
 import base64

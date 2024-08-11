@@ -2,16 +2,15 @@
 SpotifyDataFetcher Class
 ------------------------
 Purpose:
-    To fetch and process detailed track, artist, and audio feature data from Spotify, tailored for analytical purposes.
+    To retrieve and process detailed track, artist, and audio feature data from Spotify for analytical purposes.
 Functionality:
-    - Retrieves audio features and track details based on track IDs.
-    - Provides methods for cleaning and transforming the data into a more analytical-friendly format.
-    - Manages efficient data fetching through batch processing and pagination.
+    - Data Retrieval: Fetches audio features and track details using track IDs.
+    - Data Transformation: Includes methods for cleaning and converting data into an analytical-friendly format.
+    - Efficient Processing: Implements batch processing and pagination to optimize data retrieval.
 Use Cases:
-    This class is particularly useful in music data analysis, such as studying music trends, audio feature analysis, or artist popularity studies. 
-    It can be integrated into music analytics platforms, academic research on music, or applications that leverage music data for insights and recommendations.
+    - Applications involving music data analysis, such as exploring music trends, analyzing audio features, or studying artist popularity. 
+    - Can be integrated into music analytics platforms, academic research, or applications that utilize music data for insights and recommendations.
 """
-
 import requests
 import json
 import pandas as pd
