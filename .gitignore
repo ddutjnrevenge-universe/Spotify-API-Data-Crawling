@@ -1,3 +1,5 @@
 /.env
 /spotify_venv
-/__pycache__
+/core/__pycache__
+data
+
