@@ -40,9 +40,6 @@ from core.spotify_data_fetcher import SpotifyDataFetcher
 # Configuration Variables
 artist_list = ["One Direction", "Taylor Swift", "Little Mix", "Ed Sheeran", "Ariana Grande", "Olivia Rodrigo", "BTS", "Sabrina Carpenter", "Billie Eilish", "Lauv", "Jeremy Zucker"]
 
-# Path for Dataform logic (not used here, but kept for context)
-# dataform_files_path = "dataform_logic"
-
 load_dotenv()  # take environment variables from .env.
 client_id = os.getenv("client_id")
 client_secret = os.getenv("client_secret")
