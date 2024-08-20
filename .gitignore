@@ -3,3 +3,5 @@
 /core/__pycache__
 data
 /.cache
+/cache_directory
+lambda_function.zip
