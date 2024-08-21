@@ -1,7 +1,6 @@
 /.env
 /spotify_venv
 /core/__pycache__
-data
+/data
 /.cache
 /cache_directory
-lambda_function.zip
