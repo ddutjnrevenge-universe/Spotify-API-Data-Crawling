@@ -1,0 +1,882 @@
+{
+	"jobConfig": {
+		"name": "Spotify ETL Job",
+		"description": "",
+		"role": "arn:aws:iam::666243375423:role/NguyenTNH4-role-glue",
+		"command": "glueetl",
+		"version": "4.0",
+		"runtime": null,
+		"workerType": "G.1X",
+		"numberOfWorkers": 5,
+		"maxCapacity": 5,
+		"jobRunQueuingEnabled": false,
+		"maxRetries": 0,
+		"timeout": 2880,
+		"maxConcurrentRuns": 1,
+		"security": "none",
+		"scriptName": "Spotify ETL Job.py",
+		"scriptLocation": "s3://aws-glue-assets-666243375423-ap-southeast-1/scripts/",
+		"language": "python-3",
+		"spark": true,
+		"sparkConfiguration": "standard",
+		"jobParameters": [],
+		"tags": [],
+		"jobMode": "VISUAL_MODE",
+		"createdOn": "2024-08-16T03:16:19.983Z",
+		"developerMode": false,
+		"connectionsList": [],
+		"temporaryDirectory": "s3://aws-glue-assets-666243375423-ap-southeast-1/temporary/",
+		"etlAutoScaling": true,
+		"logging": true,
+		"glueHiveMetastore": true,
+		"etlAutoTuning": false,
+		"metrics": true,
+		"observabilityMetrics": true,
+		"bookmark": "job-bookmark-disable",
+		"sparkPath": "s3://aws-glue-assets-666243375423-ap-southeast-1/sparkHistoryLogs/",
+		"flexExecution": false,
+		"minFlexWorkers": null,
+		"maintenanceWindow": null
+	},
+	"dag": {
+		"node-1723776852123": {
+			"nodeId": "node-1723776852123",
+			"dataPreview": false,
+			"previewAmount": 0,
+			"inputs": [],
+			"name": "artists",
+			"generatedNodeName": "artists_node1723776852123",
+			"classification": "DataSource",
+			"type": "S3",
+			"isCatalog": false,
+			"format": "csv",
+			"paths": [
+				"s3://batch10-nguyentnh-proj/staging/artists.csv"
+			],
+			"compressionType": null,
+			"exclusions": [],
+			"groupFiles": null,
+			"groupSize": null,
+			"recurse": true,
+			"maxBand": null,
+			"maxFilesInBand": null,
+			"additionalOptions": {
+				"boundedSize": null,
+				"boundedFiles": null,
+				"enableSamplePath": false,
+				"samplePath": "s3://batch10-nguyentnh-proj/staging/artists.csv",
+				"boundedOption": null
+			},
+			"separator": ",",
+			"escaper": "",
+			"quoteChar": "\"",
+			"multiline": null,
+			"withHeader": true,
+			"writeHeader": null,
+			"skipFirst": null,
+			"optimizePerformance": false,
+			"outputSchemas": [
+				[
+					{
+						"key": "id",
+						"fullPath": [
+							"id"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "name",
+						"fullPath": [
+							"name"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_popularity",
+						"fullPath": [
+							"artist_popularity"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_genres",
+						"fullPath": [
+							"artist_genres"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "followers",
+						"fullPath": [
+							"followers"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "genre_0",
+						"fullPath": [
+							"genre_0"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "genre_1",
+						"fullPath": [
+							"genre_1"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "genre_2",
+						"fullPath": [
+							"genre_2"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "genre_3",
+						"fullPath": [
+							"genre_3"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "genre_4",
+						"fullPath": [
+							"genre_4"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "genre_5",
+						"fullPath": [
+							"genre_5"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "genre_6",
+						"fullPath": [
+							"genre_6"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "genre_7",
+						"fullPath": [
+							"genre_7"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					}
+				]
+			],
+			"calculatedType": "",
+			"codeGenVersion": 2
+		},
+		"node-1723776853146": {
+			"nodeId": "node-1723776853146",
+			"dataPreview": false,
+			"previewAmount": 0,
+			"inputs": [],
+			"name": "tracks",
+			"generatedNodeName": "tracks_node1723776853146",
+			"classification": "DataSource",
+			"type": "S3",
+			"isCatalog": false,
+			"format": "csv",
+			"paths": [
+				"s3://batch10-nguyentnh-proj/staging/tracks.csv"
+			],
+			"compressionType": null,
+			"exclusions": [],
+			"groupFiles": null,
+			"groupSize": null,
+			"recurse": true,
+			"maxBand": null,
+			"maxFilesInBand": null,
+			"additionalOptions": {
+				"boundedSize": null,
+				"boundedFiles": null,
+				"enableSamplePath": false,
+				"samplePath": "s3://batch10-nguyentnh-proj/staging/tracks.csv",
+				"boundedOption": null
+			},
+			"separator": ",",
+			"escaper": "",
+			"quoteChar": "\"",
+			"multiline": null,
+			"withHeader": true,
+			"writeHeader": null,
+			"skipFirst": null,
+			"optimizePerformance": false,
+			"outputSchemas": [
+				[
+					{
+						"key": "id",
+						"fullPath": [
+							"id"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "track_popularity",
+						"fullPath": [
+							"track_popularity"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "explicit",
+						"fullPath": [
+							"explicit"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					}
+				]
+			],
+			"calculatedType": "",
+			"codeGenVersion": 2
+		},
+		"node-1723787531826": {
+			"nodeId": "node-1723787531826",
+			"dataPreview": false,
+			"previewAmount": 0,
+			"inputs": [],
+			"name": "features",
+			"generatedNodeName": "features_node1723787531826",
+			"classification": "DataSource",
+			"type": "S3",
+			"isCatalog": false,
+			"format": "csv",
+			"paths": [
+				"s3://batch10-nguyentnh-proj/staging/features.csv"
+			],
+			"compressionType": null,
+			"exclusions": [],
+			"groupFiles": null,
+			"groupSize": null,
+			"recurse": true,
+			"maxBand": null,
+			"maxFilesInBand": null,
+			"additionalOptions": {
+				"boundedSize": null,
+				"boundedFiles": null,
+				"enableSamplePath": false,
+				"samplePath": "s3://batch10-nguyentnh-proj/staging/features.csv",
+				"boundedOption": null
+			},
+			"separator": ",",
+			"escaper": "",
+			"quoteChar": "\"",
+			"multiline": null,
+			"withHeader": true,
+			"writeHeader": null,
+			"skipFirst": null,
+			"optimizePerformance": false,
+			"outputSchemas": [
+				[
+					{
+						"key": "danceability",
+						"fullPath": [
+							"danceability"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "energy",
+						"fullPath": [
+							"energy"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "key",
+						"fullPath": [
+							"key"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "loudness",
+						"fullPath": [
+							"loudness"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "mode",
+						"fullPath": [
+							"mode"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "speechiness",
+						"fullPath": [
+							"speechiness"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "acousticness",
+						"fullPath": [
+							"acousticness"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "instrumentalness",
+						"fullPath": [
+							"instrumentalness"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "liveness",
+						"fullPath": [
+							"liveness"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "valence",
+						"fullPath": [
+							"valence"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "tempo",
+						"fullPath": [
+							"tempo"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "type",
+						"fullPath": [
+							"type"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "id",
+						"fullPath": [
+							"id"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "uri",
+						"fullPath": [
+							"uri"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "track_href",
+						"fullPath": [
+							"track_href"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "analysis_url",
+						"fullPath": [
+							"analysis_url"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "duration_ms",
+						"fullPath": [
+							"duration_ms"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "time_signature",
+						"fullPath": [
+							"time_signature"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					}
+				]
+			],
+			"calculatedType": "",
+			"codeGenVersion": 2
+		},
+		"node-1723777012990": {
+			"nodeId": "node-1723777012990",
+			"dataPreview": false,
+			"previewAmount": 0,
+			"inputs": [
+				"node-1723776852636",
+				"node-1723776852123"
+			],
+			"name": "Album-Artist Join",
+			"generatedNodeName": "AlbumArtistJoin_node1723777012990",
+			"classification": "Transform",
+			"type": "Join",
+			"joinType": "equijoin",
+			"columns": [
+				{
+					"from": "node-1723776852636",
+					"keys": [
+						"artist_id"
+					]
+				},
+				{
+					"from": "node-1723776852123",
+					"keys": [
+						"id"
+					]
+				}
+			],
+			"columnConditions": [
+				"="
+			],
+			"parentsValid": true,
+			"calculatedType": "",
+			"codeGenVersion": 2
+		},
+		"node-1723787499710": {
+			"nodeId": "node-1723787499710",
+			"dataPreview": false,
+			"previewAmount": 0,
+			"inputs": [
+				"node-1723777161840",
+				"node-1723787531826"
+			],
+			"name": "Feature Join",
+			"generatedNodeName": "FeatureJoin_node1723787499710",
+			"classification": "Transform",
+			"type": "Join",
+			"joinType": "equijoin",
+			"columns": [
+				{
+					"from": "node-1723777161840",
+					"keys": [
+						"track_id"
+					]
+				},
+				{
+					"from": "node-1723787531826",
+					"keys": [
+						"id"
+					]
+				}
+			],
+			"columnConditions": [
+				"="
+			],
+			"parentsValid": true,
+			"calculatedType": "",
+			"codeGenVersion": 2
+		},
+		"node-1723787579265": {
+			"nodeId": "node-1723787579265",
+			"dataPreview": false,
+			"previewAmount": 0,
+			"inputs": [
+				"node-1723787499710"
+			],
+			"name": "Drop Fields",
+			"generatedNodeName": "DropFields_node1723787579265",
+			"classification": "Transform",
+			"type": "DropFields",
+			"paths": [
+				"`.id`",
+				"id",
+				"`.duration_ms`"
+			],
+			"parentsValid": true,
+			"calculatedType": "",
+			"codeGenVersion": 2
+		},
+		"node-1723776852636": {
+			"nodeId": "node-1723776852636",
+			"dataPreview": false,
+			"previewAmount": 0,
+			"inputs": [],
+			"name": "albums",
+			"generatedNodeName": "albums_node1723776852636",
+			"classification": "DataSource",
+			"type": "S3",
+			"isCatalog": false,
+			"format": "csv",
+			"paths": [
+				"s3://batch10-nguyentnh-proj/staging/albums.csv"
+			],
+			"compressionType": null,
+			"exclusions": [],
+			"groupFiles": null,
+			"groupSize": null,
+			"recurse": true,
+			"maxBand": null,
+			"maxFilesInBand": null,
+			"additionalOptions": {
+				"boundedSize": null,
+				"boundedFiles": null,
+				"enableSamplePath": false,
+				"samplePath": "s3://batch10-nguyentnh-proj/staging/albums.csv",
+				"boundedOption": null
+			},
+			"separator": ",",
+			"escaper": "",
+			"quoteChar": "\"",
+			"multiline": null,
+			"withHeader": true,
+			"writeHeader": null,
+			"skipFirst": null,
+			"optimizePerformance": false,
+			"outputSchemas": [
+				[
+					{
+						"key": "track_name",
+						"fullPath": [
+							"track_name"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "track_id",
+						"fullPath": [
+							"track_id"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "track_number",
+						"fullPath": [
+							"track_number"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "duration_ms",
+						"fullPath": [
+							"duration_ms"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artists",
+						"fullPath": [
+							"artists"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "album_type",
+						"fullPath": [
+							"album_type"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "total_tracks",
+						"fullPath": [
+							"total_tracks"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "album_name",
+						"fullPath": [
+							"album_name"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "release_date",
+						"fullPath": [
+							"release_date"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "label",
+						"fullPath": [
+							"label"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "album_popularity",
+						"fullPath": [
+							"album_popularity"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "album_id",
+						"fullPath": [
+							"album_id"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_id",
+						"fullPath": [
+							"artist_id"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_0",
+						"fullPath": [
+							"artist_0"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_1",
+						"fullPath": [
+							"artist_1"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_2",
+						"fullPath": [
+							"artist_2"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_3",
+						"fullPath": [
+							"artist_3"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_4",
+						"fullPath": [
+							"artist_4"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_5",
+						"fullPath": [
+							"artist_5"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_6",
+						"fullPath": [
+							"artist_6"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_7",
+						"fullPath": [
+							"artist_7"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "artist_8",
+						"fullPath": [
+							"artist_8"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					},
+					{
+						"key": "duration_sec",
+						"fullPath": [
+							"duration_sec"
+						],
+						"type": "string",
+						"glueStudioType": null,
+						"children": null
+					}
+				]
+			],
+			"calculatedType": "",
+			"codeGenVersion": 2
+		},
+		"node-1723787718122": {
+			"nodeId": "node-1723787718122",
+			"dataPreview": false,
+			"previewAmount": 0,
+			"inputs": [
+				"node-1723787579265"
+			],
+			"name": "Destination",
+			"generatedNodeName": "Destination_node1723787718122",
+			"classification": "DataSink",
+			"type": "S3",
+			"streamingBatchInterval": 100,
+			"format": "glueparquet",
+			"compression": "snappy",
+			"path": "s3://batch10-nguyentnh-proj/datawarehouse/",
+			"partitionKeys": [],
+			"schemaChangePolicy": {
+				"enableUpdateCatalog": false,
+				"updateBehavior": null,
+				"database": null,
+				"table": null
+			},
+			"updateCatalogOptions": "none",
+			"autoDataQuality": {
+				"isEnabled": false,
+				"evaluationContext": null
+			},
+			"calculatedType": "",
+			"codeGenVersion": 2
+		},
+		"node-1723777161840": {
+			"nodeId": "node-1723777161840",
+			"dataPreview": false,
+			"previewAmount": 0,
+			"inputs": [
+				"node-1723777012990",
+				"node-1723776853146"
+			],
+			"name": "Track Join",
+			"generatedNodeName": "TrackJoin_node1723777161840",
+			"classification": "Transform",
+			"type": "Join",
+			"joinType": "equijoin",
+			"columns": [
+				{
+					"from": "node-1723777012990",
+					"keys": [
+						"track_id"
+					]
+				},
+				{
+					"from": "node-1723776853146",
+					"keys": [
+						"id"
+					]
+				}
+			],
+			"columnConditions": [
+				"="
+			],
+			"parentsValid": true,
+			"calculatedType": "",
+			"codeGenVersion": 2
+		}
+	},
+	"hasBeenSaved": false,
+	"usageProfileName": null
+}

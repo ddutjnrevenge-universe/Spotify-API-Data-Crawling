@@ -1,7 +1,7 @@
 # Spotify Data Crawling: Exploring My Favorite Artists
-Welcome to my Spotify Data Crawling repository! 🎵
+Welcome to my Spotify Project repository! 🎵
 
-As a dedicated music enthusiast and daily Spotify user, I embarked on this project to dive deep into the discographies of my favorite artists. This repository showcases my work with the Spotify API to fetch and analyze detailed data about albums, tracks, and artists.
+As a dedicated music enthusiast and daily Spotify user, I embarked on this project to dive deep into the discographies of my favorite artists. This repository showcases my work with the Spotify API to fetch, analyze and my other further exploration on this dataset.
 
 ## Overview
 
@@ -52,7 +52,7 @@ Pre-process the data using the steps outlined in the ETL process. The following 
 
 The recommendation system is built using the following steps:
 
-1. **Data Preparation**: Import the processed dataset (`processed.csv`) and prepare it for clustering.
+1. **Data Preparation**: Import the `processed` dataset derived from previous processes on AWS and prepare it for clustering.
 2. **Label Encoding and Scaling**: Apply label encoding to categorical data and MinMaxScaler for feature scaling.
 3. **Clustering**: Use the KMeans algorithm to cluster the data. The KElbowVisualizer helps determine the optimal number of clusters.
 4. **Visualization**: Visualize the clustered data using PCA (Principal Component Analysis) and Plotly.
@@ -75,10 +75,8 @@ To run the recommendation system:
 ### Example Usage
 
 ```python
-# Search relevant song based on keywords in track name and artist
-query_track_1, query_artist = get_name_artist(df, "Safe", "Taylor Swift")
-print(query_track_1, query_artist)
-pd.DataFrame(recommend_songs([{'track_name': query_track_1, 'artists': query_artist}],  df_scaled))
+# Asking for recommendations based on BTS's Magic Shop song
+pd.DataFrame(recommend_songs([{'track_name': 'Magic Shop', 'artists': 'BTS'}],  df_scaled))
 ```
 ## Conclusion
 This project demonstrates a simple yet effective approach to building a music recommendation system using Spotify's data, AWS services, and machine learning techniques. The flowchart and steps outlined provide a clear roadmap for implementing a robust and scalable recommendation system.
